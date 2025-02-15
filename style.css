@@ -1,0 +1,70 @@
+/* Reset default margins/padding */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the fixed header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #111;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  z-index: 1000;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Adjust container to account for header height */
+#container {
+  margin-top: 60px; /* Adjust if header height changes */
+  height: calc(100vh - 60px);
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+/* Each Wikiscroll-style card */
+.wikiscroll-item {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  scroll-snap-align: start;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: transform 0.3s;
+}
+
+/* Scale slightly on hover */
+.wikiscroll-item:hover {
+  transform: scale(1.02);
+}
+
+/* Overlay at the bottom with a gradient */
+.overlay {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+}
+
+/* Title styling */
+.title {
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+
+/* Description styling */
+.description {
+  font-size: 1em;
+  opacity: 0.9;
+}
